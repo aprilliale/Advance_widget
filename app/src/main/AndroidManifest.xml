@@ -22,6 +22,10 @@
 
         <service android:name=".PlantWateringService" />
 
+        <service
+            android:name=".GridWidgetServiceJava"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <provider
             android:name=".provider.PlantContentProvider"
             android:authorities="id.sch.smktelkom.learn.widgett"
