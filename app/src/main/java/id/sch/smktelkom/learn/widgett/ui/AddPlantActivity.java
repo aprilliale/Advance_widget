@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import id.sch.smktelkom.learn.widgett.PlantWateringService;
 import id.sch.smktelkom.learn.widgett.R;
 import id.sch.smktelkom.learn.widgett.provider.PlantContact;
 
@@ -42,6 +43,7 @@ public class AddPlantActivity extends AppCompatActivity {
         contentValues.put(PlantContact.PlantEntry.COLUMN_CREATION_TIME, timeNow);
         contentValues.put(PlantContact.PlantEntry.COLUMN_LAST_WATERED_TIME, timeNow);
         getContentResolver().insert(PlantContact.PlantEntry.CONTENT_URI, contentValues);
+        PlantWateringService.startActionUpdatePlantWidgets(this);
         finish();
     }
 
